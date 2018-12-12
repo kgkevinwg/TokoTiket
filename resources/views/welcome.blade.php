@@ -26,30 +26,30 @@
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-md-6">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
             </span>
-                <h4 class="service-heading">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Can't attend your concert? Dont worry!</h4>
+                <p class="text-muted">On Toko Tiket, we got you covered. Just advertise your ticket in less than 10 minutes!</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+              <i class="fas fa-truck fa-stack-1x fa-inverse"></i>
             </span>
-                <h4 class="service-heading">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Looking to help your friend selling tickets?</h4>
+                <p class="text-muted">We got you covered, just search through vast ammount of tickets and find your ideal ticket!</p>
             </div>
-            <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-                <h4 class="service-heading">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
+            {{--<div class="col-md-4">--}}
+            {{--<span class="fa-stack fa-4x">--}}
+              {{--<i class="fas fa-circle fa-stack-2x text-primary"></i>--}}
+              {{--<i class="fas fa-lock fa-stack-1x fa-inverse"></i>--}}
+            {{--</span>--}}
+                {{--<h4 class="service-heading">Secure Payment</h4>--}}
+                {{--<p class="text-muted">All payment through TokoTiket is s</p>--}}
+            {{--</div>--}}
         </div>
     </div>
 </section>
@@ -59,8 +59,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Portfolio</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Greatest Event Experience</h2>
+                <h3 class="section-subheading text-muted">Some of our best selling items</h3>
             </div>
         </div>
         <div class="row">
@@ -71,25 +71,28 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{asset('img/portfolio/01-thumbnail.jpg')}}" alt="">
+                    <div class="home-portfolio-thumb">
+
+                    </div>
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Threads</h4>
-                    <p class="text-muted">Illustration</p>
+                    <h4>Twiceland: Fantasy Park in Jakarta 2018</h4>
+                    <p class="text-muted">TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{asset('img/portfolio/02-thumbnail.jpg')}}" alt="">
+                    <div class="home-portfolio-thumb">
+                    </div>
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Explore</h4>
-                    <p class="text-muted">Graphic Design</p>
+                    <h4>Blackpink: In Your Area 2018 Tour</h4>
+                    <p class="text-muted">BLACKPINK Japan Arena Tour 2018 is Black Pink's first arena tour which is set to be held in various cities in Japan. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">

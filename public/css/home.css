@@ -176,7 +176,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/home/twiceland-header-bg.jpg");
+  background-image: url("../img/home/twiceland-header.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -250,6 +250,7 @@ header.masthead .intro-text .intro-heading {
   max-width: 400px;
   margin: 0 auto;
   cursor: pointer;
+    height: 250px;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
@@ -372,6 +373,22 @@ header.masthead .intro-text .intro-heading {
 .portfolio-modal .close-modal:hover {
   opacity: 0.3;
 }
+
+.home-portofolio-thumb
+{
+    object-fit: contain;
+}
+
+.home-portfolio-thumb
+{
+    width: 100%;
+    height: 250px;
+    background-image: url("../img/events/concerts/twiceland-thumb.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
 
 .portfolio-modal .close-modal .lr {
   /* Safari and Chrome */
