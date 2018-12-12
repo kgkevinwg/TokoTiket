@@ -389,6 +389,13 @@ header.masthead .intro-text .intro-heading {
     background-position: 50% 50%;
 }
 
+.home-portfolio-thumb2
+{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
 
 .portfolio-modal .close-modal .lr {
   /* Safari and Chrome */

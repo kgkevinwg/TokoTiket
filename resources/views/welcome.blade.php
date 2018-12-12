@@ -71,9 +71,10 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <div class="home-portfolio-thumb">
+                    {{--<div class="home-portfolio-thumb">--}}
 
-                    </div>
+                    {{--</div>--}}
+                    <img class="home-portfolio-thumb2" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Twiceland: Fantasy Park in Jakarta 2018</h4>
