@@ -379,21 +379,19 @@ header.masthead .intro-text .intro-heading {
     object-fit: contain;
 }
 
+
 .home-portfolio-thumb
 {
+    object-fit: cover;
     width: 100%;
     height: 250px;
-    background-image: url("../img/events/concerts/twiceland-thumb.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
 }
 
 .home-portfolio-thumb2
 {
     object-fit: cover;
     width: 100%;
-    height: 250px;
+    height: 330px;
 }
 
 

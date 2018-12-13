@@ -13,4 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+//
+Route::get('/browseEvents', 'EventController@getAllEvent')->name('browseEvents');
+
+Route::resource('events','EventController');
