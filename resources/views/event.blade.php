@@ -16,57 +16,34 @@
             <div class="col-lg-8">
 
                 <!-- Title -->
-                <h1 class="mt-4">Event Name</h1>
+                <h1 class="mt-4">{{$ticket['title']}}</h1>
 
                 <!-- Author -->
                 <p class="lead">
                     by
-                    <a href="#">Seller Name</a>
+                    <a href="#">{{$user['name']}}</a>
                 </p>
 
                 <hr>
 
                 <!-- Date/Time -->
-                <p>Posted on January 1, 2018 at 12:00 PM</p>
+                <p>{{$event['date']}}</p>
 
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/twiceland-banner.jpg')}}" alt="">
+                <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset($photo['path'])}}" alt="">
 
 
                 <hr>
 
                 <!-- Post Content -->
-                Description
+                {{$ticket['desctiption']}}
 
 
 
             </div>
 
-            <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-                <!-- Search Widget -->
-                <div class="card my-4">
-                    <h5 class="card-header">Search</h5>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <button class="btn btn-primary" style="width: 100%;" type="button">Buy Now</button>
-
-
-
-            </div>
 
             <div class="col-md-8">
                 <!-- Categories Widget -->
@@ -75,15 +52,15 @@
                     <div class="card-body">
                         <div class="col-lg-12">
                             <div class="col-md-4 d-inline-block" ><b>Name: </b></div>
-                            <div class="col-md-6 d-inline-block"> Udin </div>
+                            <div class="col-md-6 d-inline-block"> {{$user['name']}} </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="col-md-4 d-inline-block" ><b>Email: </b></div>
-                            <div class="col-md-6 d-inline-block"> udin@corporation.com </div>
+                            <div class="col-md-6 d-inline-block"> {{$user['email']}}</div>
                         </div>
                         <div class="col-lg-12">
                             <div class="col-md-4 d-inline-block" ><b>Phone: </b></div>
-                            <div class="col-md-6 d-inline-block"> 08123456789 </div>
+                            <div class="col-md-6 d-inline-block"> {{$user['phone']}} </div>
                         </div>
 
                     </div>

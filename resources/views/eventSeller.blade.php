@@ -22,54 +22,32 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Seller Name</h4>
-                        <p class="card-text">Description (20) words</p>
+
+            @if(isset($data) && count($data) != 0)
+                @foreach($data as $d)
+
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <img class="card-img-top list-thumb" src="{{asset($d[2]['path'])}}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{$d[1]['name']}}</h4>
+                                <p class="card-text">{{$d[0]['description']}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{url('ticketDetail').'/'.$d[0]['id']}}" class="btn btn-primary">Find Out More!</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Find Out More!</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Seller Name</h4>
-                        <p class="card-text">Description (20) words</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Find Out More!</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Seller Name</h4>
-                        <p class="card-text">Description (20) words</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Find Out More!</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card">
-                    <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Seller Name</h4>
-                        <p class="card-text">Description (20) words</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Find Out More!</a>
-                    </div>
-                </div>
-            </div>
+
+
+                    @endforeach
+                @else
+                <h1 style="margin: 0 auto;">Oops, no data yet! stay tune for more info</h1>
+                @endif
+
+
+
 
 
 
@@ -79,4 +57,4 @@
     </div>
 
 
-    @endsectopm
+    @endsection

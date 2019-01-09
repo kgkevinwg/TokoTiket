@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 Route::get('/browseEvents', 'EventController@getBrowseEvent')->name('browseEvents');
 
-Route::get('/listEvent/$id', 'EventConroller@getSpesificEvent');
+Route::get('/listEvent/{id}', 'EventController@getSpesificEvent');
+
+Route::get('/ticketDetail/{id}','EventController@getTicketDetail');
 
 
 # testing purpose
