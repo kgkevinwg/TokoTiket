@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Photo;
+use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -41,13 +42,34 @@ class EventController extends Controller
     public function getSpesificEvent($id)
     {
 
-        
+
+        $data = array();
+
         $event = Event::where('id','=',$id)->first();
-        $seller= User::where('id','=',$event->userId)->first();
-        $photo = Photo::where('id','=',$event->photoId)->first();
+        $ticket = Ticket::where('eventId','=',$event->id)->get();
+        foreach($ticket as $t){
+            $user = User::where('id','=',$t->userId)->first();
+            $photo = Photo::where('id','=',$t->photoId)->first();
 
-        return view('eventSeller',['data'=> array($event,$seller,$photo) ]);
+            array_push($data,[$t,$user,$photo]);
 
+        }
+
+
+
+        return view('eventSeller',['data'=> $data ]);
+
+    }
+
+    public function getTicketDetail($id)
+    {
+        $ticket = Ticket::where('id','=',$id)->first();
+        $event = Event::where('id','=',$ticket->eventId)->first();
+        $user = User::where('id','=',$ticket->userId)->first();
+        $photo = Photo::where('id','=',$ticket->photoId)->first();
+
+
+        return view('event',['ticket'=>$ticket,'event'=>$event,'user'=>$user,'photo'=>$photo]);
     }
     public function index()
     {
