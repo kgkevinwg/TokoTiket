@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/browseEvents', 'EventController@getBrowseEvent')->name('browseEvents');
+Route::post('/category', 'CategoryController@store');
 
 Route::get('/listEvent/{id}', 'EventController@getSpesificEvent');
 
