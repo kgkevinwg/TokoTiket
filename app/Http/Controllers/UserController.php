@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -74,7 +78,6 @@ class UserController extends Controller
     public function insert(Request $request)
         {
                 $validator = Validator::make($request->all(), [
-                'username' => 'required|unique:users|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
             ]);
@@ -85,11 +88,10 @@ class UserController extends Controller
 
             $user = User::create([
                 'name' => $request->name,
-                'username' => $request->username, //->get('username'),
-                'phone' => $request->phone,
                 'address' => $request->address,
                 'email' => $request->email,
                 'password' => Hash::make($request->get('password')),
+                'phone' => $request->phone
             ]);
 
             return Redirect::back();

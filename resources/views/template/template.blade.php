@@ -45,12 +45,18 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{route('browseEvents')}}">Browse</a>
                     </li>
+                    @if (auth()->guest())
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{route('auth')}}">Login</a>
                     </li>
+                    @else
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{route('auth')}}">Register</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            {{ csrf_field() }}
+                            <button style="background: none; border: none; cursor: pointer;" class="nav-link js-scroll-trigger">LOGOUT</button>
+                        </form>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{url('admin')}}">Panel</a>
                     </li>

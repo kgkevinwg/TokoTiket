@@ -7,8 +7,7 @@
     @endsection
 @section('content')
 
-<!-- Header -->
-<p>test</p>
+
 <header class="masthead">
     <div class="container">
         <div class="intro-text">
