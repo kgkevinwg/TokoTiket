@@ -15,7 +15,8 @@ class EventController extends Controller
 
     public function getAllEvent()
     {
-       $events =  Event::all();
+       $events =  Event::all()->take(3)->get();
+    
        return view('browse',['events'=> $events]);
 
     }
