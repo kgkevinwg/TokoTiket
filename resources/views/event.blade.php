@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" type="button">Go!</button>
+                <button class="btn btn-primary" style="width: 100%;" type="button">Buy Now</button>
 
 
 

@@ -28,3 +28,41 @@ Route::resource('events','EventController');
 Route::get('/event',function(){
     return view('event');
 });
+
+Route::get('/eventSeller',function(){
+    return view("eventSeller");
+});
+
+Route::get('/myCart',function(){
+    return view("cart");
+});
+
+
+
+Route::get('/insertTiket',function(){
+    return view("insertTiket");
+});
+
+Route::get('/admin',function(){
+    return view("admin");
+})->name('admin');
+
+
+Route::get('/adminEvent',function(){
+    return view("adminEvent");
+})->name('adminEvent');
+
+
+Route::get('/adminCategory',function(){
+    return view("adminCategory");
+})->name('adminCategory');
+
+
+Route::get('/adminTicket',function(){
+    return view("adminTicket");
+})->name('adminTicket');
+
+
+Route::get('/adminUser',function(){
+    return view("adminUser");
+})->name('adminUser');
