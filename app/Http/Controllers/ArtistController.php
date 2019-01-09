@@ -2,25 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
 use Illuminate\Http\Request;
+use App\Artist;
 
-class EventController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function getAllEvent()
-    {
-       return Event::all()->take(3)->get();
-
-    }
     public function index()
     {
-        //
+        return Artist::all()->take(3)->get();
     }
 
     /**
