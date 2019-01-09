@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Photo;
+use App\User;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -17,6 +19,33 @@ class EventController extends Controller
     {
        $events =  Event::all();
        return view('browse',['events'=> $events]);
+
+    }
+
+    public function getBrowseEvent()
+    {
+        $data = array();
+
+        $events =  Event::take(3)->get();
+        foreach($events as $e)
+        {
+            $photo = Photo::where('id','=',$e->photoId)->first();
+            array_push($data,array($e,$photo));
+
+        }
+
+        return view('browse',['data'=> $data]);
+    }
+
+    public function getSpesificEvent($id)
+    {
+
+        
+        $event = Event::where('id','=',$id)->first();
+        $seller= User::where('id','=',$event->userId)->first();
+        $photo = Photo::where('id','=',$event->photoId)->first();
+
+        return view('eventSeller',['data'=> array($event,$seller,$photo) ]);
 
     }
     public function index()
@@ -64,7 +93,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        //x
     }
 
     /**

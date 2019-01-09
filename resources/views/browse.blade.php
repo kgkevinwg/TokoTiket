@@ -16,60 +16,29 @@
             <small>Don't miss your favourite shows!</small>
         </h1>
 
-        <!-- Project One -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/twiceland-banner.jpg')}}" alt="">
-                </a>
+        @foreach($data as $d)
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{$d[1]['path']}}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{$d[0]['name']}} </h3>
+                    <p>{{$d[0]['description']}}</p>
+                    <a class="btn btn-primary" href="{{url('listEvent').'/'.$d[0]['id']}}">View Tickets</a>
+                    </div>
             </div>
-            <div class="col-md-5">
-                <h3>Twiceland: Fantasy Park in Jakarta 2018 </h3>
-                <p>TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE.</p>
-                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
-            </div>
-        </div>
-        <!-- /.row -->
+            <hr>
 
-        <hr>
+            @endforeach
 
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/in_your_area-banner.jpg')}}" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>In Your Area: Blackpink 1st Tour 2018</h3>
-                <p>TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE.</p>
-                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/redmare-banner.jpg')}}" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Redmare: Red Velvet 2nd Tour 2018</h3>
-                <p>REDMARE is the second concert by Red Velvet</p>
-                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
-            </div>
-        </div>
         <!-- /.row -->
 
         <hr>
 
 
-
-        <hr>
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center">

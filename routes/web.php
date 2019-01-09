@@ -18,12 +18,14 @@ Route::get('/', function () {
 //
 
 
+Route::get('/browseEvents', 'EventController@getBrowseEvent')->name('browseEvents');
+
+Route::get('/listEvent/$id', 'EventConroller@getSpesificEvent');
 
 
 # testing purpose
 #=================
 
-Route::get('/browseEvents', 'EventController@getAllEvent')->name('browseEvents');
 Route::resource('events','EventController');
 Route::get('/event',function(){
     return view('event');
