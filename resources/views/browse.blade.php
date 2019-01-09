@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/twiceland-banner.jpg')}}" alt="">
                 </a>
             </div>
             <div class="col-md-5">
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/in_your_area-banner.jpg')}}" alt="">
                 </a>
             </div>
             <div class="col-md-5">
@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-md-7">
                 <a href="#">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                    <img class="img-fluid rounded mb-3 mb-md-0 browse-banner" src="{{asset('img/events/concerts/redmare-banner.jpg')}}" alt="">
                 </a>
             </div>
             <div class="col-md-5">
