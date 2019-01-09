@@ -2,56 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
-use App\Photo;
-use App\User;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function getAllEvent()
-    {
-       $events =  Event::all();
-    
-       return view('browse',['events'=> $events]);
-
-    }
-
-    public function getBrowseEvent()
-    {
-        $data = array();
-
-        $events =  Event::take(3)->get();
-        foreach($events as $e)
-        {
-            $photo = Photo::where('id','=',$e->photoId)->first();
-            array_push($data,array($e,$photo));
-
-        }
-
-        return view('browse',['data'=> $data]);
-    }
-
-    public function getSpesificEvent($id)
-    {
-
-        
-        $event = Event::where('id','=',$id)->first();
-        $seller= User::where('id','=',$event->userId)->first();
-        $photo = Photo::where('id','=',$event->photoId)->first();
-
-        return view('eventSeller',['data'=> array($event,$seller,$photo) ]);
-
-    }
     public function index()
     {
-        return Event::take(3)->get();
+        //
     }
 
     /**
@@ -94,7 +56,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //x
+        //
     }
 
     /**
@@ -108,6 +70,30 @@ class EventController extends Controller
     {
         //
     }
+
+    public function insert(Request $request)
+        {
+                $validator = Validator::make($request->all(), [
+                'username' => 'required|unique:users|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6',
+            ]);
+
+            if($validator->fails()){
+                    return response()->json($validator->errors()->toJson(), 400);
+            }
+
+            $user = User::create([
+                'name' => $request->name,
+                'username' => $request->username, //->get('username'),
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'email' => $request->email,
+                'password' => Hash::make($request->get('password')),
+            ]);
+
+            return Redirect::back();
+        }
 
     /**
      * Remove the specified resource from storage.

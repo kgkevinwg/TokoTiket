@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('type')->default('default');
         });
     }
 

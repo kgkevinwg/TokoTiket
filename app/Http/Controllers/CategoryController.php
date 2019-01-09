@@ -2,56 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
-use App\Photo;
-use App\User;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function getAllEvent()
-    {
-       $events =  Event::all();
-    
-       return view('browse',['events'=> $events]);
-
-    }
-
-    public function getBrowseEvent()
-    {
-        $data = array();
-
-        $events =  Event::take(3)->get();
-        foreach($events as $e)
-        {
-            $photo = Photo::where('id','=',$e->photoId)->first();
-            array_push($data,array($e,$photo));
-
-        }
-
-        return view('browse',['data'=> $data]);
-    }
-
-    public function getSpesificEvent($id)
-    {
-
-        
-        $event = Event::where('id','=',$id)->first();
-        $seller= User::where('id','=',$event->userId)->first();
-        $photo = Photo::where('id','=',$event->photoId)->first();
-
-        return view('eventSeller',['data'=> array($event,$seller,$photo) ]);
-
-    }
     public function index()
     {
-        return Event::take(3)->get();
+        
     }
 
     /**
@@ -94,7 +56,7 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //x
+        //
     }
 
     /**
