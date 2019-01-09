@@ -35,7 +35,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Admin Panel</a>
+    <a class="navbar-brand mr-1" href="{{url('/')}}">Admin Panel</a>
 
 
 
