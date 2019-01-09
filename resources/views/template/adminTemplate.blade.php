@@ -82,11 +82,11 @@
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>New Category</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('adminTicket')}}">
-                <i class="fas fa-fw fa-table"></i>
-                <span>New Ticket</span></a>
-        </li>
+        {{--<li class="nav-item">--}}
+            {{--<a class="nav-link" href="{{route('adminTicket')}}">--}}
+                {{--<i class="fas fa-fw fa-table"></i>--}}
+                {{--<span>New Ticket</span></a>--}}
+        {{--</li>--}}
     </ul>
 
     @yield('content')

@@ -31,7 +31,7 @@ Route::get('/event',function(){
 
 Route::get('/eventSeller',function(){
     return view("eventSeller");
-});
+})->name('listEvent');
 
 Route::get('/myCart',function(){
     return view("cart");
@@ -66,3 +66,7 @@ Route::get('/adminTicket',function(){
 Route::get('/adminUser',function(){
     return view("adminUser");
 })->name('adminUser');
+
+Route::get('/auth',function(){
+    return view("auth");
+})->name('auth');

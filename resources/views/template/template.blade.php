@@ -13,6 +13,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
     <!-- Custom fonts for this template -->
@@ -45,7 +46,13 @@
                         <a class="nav-link js-scroll-trigger" href="{{route('browseEvents')}}">Browse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#artist">Login</a>
+                        <a class="nav-link js-scroll-trigger" href="{{route('auth')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{route('auth')}}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{url('admin')}}">Panel</a>
                     </li>
 
                 </ul>
@@ -101,4 +108,5 @@
 
 
 </body>
+@yield('script')
 </html>

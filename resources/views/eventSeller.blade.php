@@ -14,9 +14,9 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron my-4">
-            <h1 class="display-3">A Warm Welcome!</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+            <h1 class="display-3">Browse trough number of seller!</h1>
+            <p class="lead">Don't waste your time, your favourite artist is waiting for you.</p>
+
         </header>
 
         <!-- Page Features -->
@@ -26,8 +26,8 @@
                 <div class="card">
                     <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <h4 class="card-title">Seller Name</h4>
+                        <p class="card-text">Description (20) words</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Find Out More!</a>
@@ -38,8 +38,8 @@
                 <div class="card">
                     <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <h4 class="card-title">Seller Name</h4>
+                        <p class="card-text">Description (20) words</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Find Out More!</a>
@@ -50,8 +50,8 @@
                 <div class="card">
                     <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <h4 class="card-title">Seller Name</h4>
+                        <p class="card-text">Description (20) words</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Find Out More!</a>
@@ -62,8 +62,8 @@
                 <div class="card">
                     <img class="card-img-top list-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <h4 class="card-title">Seller Name</h4>
+                        <p class="card-text">Description (20) words</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">Find Out More!</a>

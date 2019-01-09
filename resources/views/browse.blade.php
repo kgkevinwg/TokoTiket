@@ -26,7 +26,7 @@
             <div class="col-md-5">
                 <h3>Twiceland: Fantasy Park in Jakarta 2018 </h3>
                 <p>TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE.</p>
-                <a class="btn btn-primary" href="#">View Tickets</a>
+                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
             </div>
         </div>
         <!-- /.row -->
@@ -43,7 +43,7 @@
             <div class="col-md-5">
                 <h3>In Your Area: Blackpink 1st Tour 2018</h3>
                 <p>TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE.</p>
-                <a class="btn btn-primary" href="#">View Tickets</a>
+                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
             </div>
         </div>
         <!-- /.row -->
@@ -60,7 +60,7 @@
             <div class="col-md-5">
                 <h3>Redmare: Red Velvet 2nd Tour 2018</h3>
                 <p>REDMARE is the second concert by Red Velvet</p>
-                <a class="btn btn-primary" href="#">View Tickets</a>
+                <a class="btn btn-primary" href="{{route('listEvent')}}">View Tickets</a>
             </div>
         </div>
         <!-- /.row -->
@@ -101,4 +101,7 @@
     @endsection
 @section('script')
     <script src="{{asset('js/template.js')}}"></script>
+    <script>
+
+    </script>
 @endsection
