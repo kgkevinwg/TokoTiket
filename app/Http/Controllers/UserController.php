@@ -91,7 +91,8 @@ class UserController extends Controller
                 'address' => $request->address,
                 'email' => $request->email,
                 'password' => Hash::make($request->get('password')),
-                'phone' => $request->phone
+                'phone' => $request->phone,
+                'role' => 'Member'
             ]);
 
             return Redirect::back();

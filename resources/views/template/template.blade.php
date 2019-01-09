@@ -60,10 +60,11 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{url('insertTiket')}}">Jual</a>
                     </li>
+                    @if(\Illuminate\Support\Facades\Auth::user()['role'] == "Admin")
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{url('admin')}}">Panel</a>
                     </li>
-
+                    @endif
                 </ul>
             </div>
         </div>
