@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -35,6 +36,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $data = new Category();
+        $data->name = $request->name;
+        $data->save();
     }
 
     /**
