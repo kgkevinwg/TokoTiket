@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Artist;
+use App\Ticket;
 
-class ArtistController extends Controller
+class TicketCategory extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        return Artist::take(3)->get();
+        return Ticket::all();
     }
 
     /**

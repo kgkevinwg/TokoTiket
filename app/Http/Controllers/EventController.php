@@ -15,12 +15,14 @@ class EventController extends Controller
 
     public function getAllEvent()
     {
-       return Event::all()->take(3)->get();
+       $events =  Event::all();
+    
+       return view('browse',['events'=> $events]);
 
     }
     public function index()
     {
-        //
+        return Event::take(3)->get();
     }
 
     /**

@@ -70,3 +70,7 @@ Route::get('/adminUser',function(){
 Route::get('/auth',function(){
     return view("auth");
 })->name('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

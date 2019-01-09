@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Artist;
 
-class ArtistController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        return Artist::take(3)->get();
+        
     }
 
     /**

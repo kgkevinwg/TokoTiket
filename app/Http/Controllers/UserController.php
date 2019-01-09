@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Artist;
 
-class ArtistController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        return Artist::take(3)->get();
+        //
     }
 
     /**
@@ -71,6 +70,30 @@ class ArtistController extends Controller
     {
         //
     }
+
+    public function insert(Request $request)
+        {
+                $validator = Validator::make($request->all(), [
+                'username' => 'required|unique:users|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6',
+            ]);
+
+            if($validator->fails()){
+                    return response()->json($validator->errors()->toJson(), 400);
+            }
+
+            $user = User::create([
+                'name' => $request->name,
+                'username' => $request->username, //->get('username'),
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'email' => $request->email,
+                'password' => Hash::make($request->get('password')),
+            ]);
+
+            return Redirect::back();
+        }
 
     /**
      * Remove the specified resource from storage.
