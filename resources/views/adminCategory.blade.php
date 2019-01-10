@@ -18,19 +18,19 @@
                     <h4 class="mb-0">New Category</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form" role="form" autocomplete="off" action="{{url('/category')}}"  method="post">
+                    <form class="form" role="form" autocomplete="off" action="{{url('/newCategory')}}"  method="post">
                         {{csrf_field()}}
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Category Name</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" value="Concert">
+                                <input class="form-control" type="text" value="Concert" name="name">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label"></label>
                             <div class="col-lg-9">
-                                <input type="reset" class="btn btn-secondary" value="Cancel">
+
                                 <input type="submit" class="btn btn-primary" value="Save Changes">
                             </div>
                         </div>

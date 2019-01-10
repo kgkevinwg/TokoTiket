@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Artist;
+use App\Category;
 use App\Event;
 use App\Photo;
 use App\Ticket;
 use App\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use \Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -22,6 +28,20 @@ class EventController extends Controller
     
        return view('browse',['events'=> $events]);
 
+    }
+
+    public function getAllEventTable()
+    {
+        $events =  Event::all();
+
+        return view('admin',['events'=> $events]);
+
+    }
+
+    public function getAllTicketTable()
+    {
+        $tickets = Ticket::all();
+        return view('admin',['tickets'=>$tickets]);
     }
 
     public function getBrowseEvent()
@@ -61,6 +81,53 @@ class EventController extends Controller
 
     }
 
+    public function  newTicket(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'ticketName' => 'required',
+            'ticketDescription' => 'required',
+            'ticketPhoto'=>'required'
+        ]);
+
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $photo = implode('.',[
+            time(),
+            $request->ticketPhoto->getClientOriginalExtension()
+        ]);
+
+
+        $request->ticketPhoto->move('img/events/concerts/',$photo);
+
+        $newphoto = new Photo;
+        $newphoto->path= "img/events/concerts/".$photo;
+        $newphoto->save();
+
+        $photoId = DB::table('photos')->orderBy('id', 'desc')->first()->id;
+
+        $ticket = new Ticket;
+        $ticket->userId = Auth::user()['id'];
+        $ticket->photoId= $photoId;
+        $ticket->title = $request->ticketName;
+        $ticket->description = $request->ticketDescription;
+        $ticket->eventId = $request->eventId;
+        $ticket->save();
+
+        
+
+        return Redirect::back();
+        
+    }
+
+    public function getInsertTiketPage()
+    {
+        $event = Event::all();
+        return view('insertTiket',['event'=>$event]);
+    }
+
     public function getTicketDetail($id)
     {
         $ticket = Ticket::where('id','=',$id)->first();
@@ -75,6 +142,62 @@ class EventController extends Controller
     {
         return Event::take(3)->get();
     }
+
+    public function createEvent()
+    {
+        $categories = Category::all();
+        $artists = Artist::all();
+
+
+        return view('adminEvent',["categories"=>$categories,'artists'=>$artists]);
+    }
+
+    public function newAdminEvent(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'category' => 'required',
+            'artist' => 'required',
+            'name'=>'required',
+            'description'=>'required',
+            'date'=>'required',
+
+        ]);
+
+
+        $photo = implode('.',[
+            time(),
+            $request->photo->getClientOriginalExtension()
+        ]);
+
+
+        $request->photo->move('img/events/concerts/',$photo);
+
+        $newphoto = new Photo;
+        $newphoto->path= "img/events/concerts/".$photo;
+        $newphoto->save();
+
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $photoId = DB::table('photos')->orderBy('id', 'desc')->first()->id;
+
+
+
+        $event = new Event;
+        $event->categoryId = $request->category;
+        $event->artistId = $request->artist;
+        $event->photoId = $photoId;
+        $event->name = $request->name;
+        $event->description = $request->description;
+        $event->date = $request->date;
+        $event->save();
+        return Redirect::back();
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -57,10 +57,14 @@
                         </form>
                     </li>
                     @endif
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{url('insertTiket')}}">Jual</a>
-                    </li>
-                    @if(\Illuminate\Support\Facades\Auth::user()['role'] == "Admin")
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{{url('insertTiket')}}">Jual</a>
+                        </li>
+                    @endif
+
+
+                    @if(\Illuminate\Support\Facades\Auth::user()['role'] == "admin")
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{url('admin')}}">Panel</a>
                     </li>

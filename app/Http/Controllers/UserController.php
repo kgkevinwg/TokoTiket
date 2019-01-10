@@ -98,6 +98,40 @@ class UserController extends Controller
             return Redirect::back();
         }
 
+
+    public function newUser(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
+            'name' =>'required',
+            'phone'=>'required',
+            'address'=>'required',
+
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $user = User::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'email' => $request->email,
+            'password' => Hash::make($request->get('password')),
+            'phone' => $request->phone,
+            'role' => 'member'
+        ]);
+
+        return Redirect::back();
+    }
+
+    public function getAllUserTable()
+    {
+        $user = User::all();
+        return view('admin',['users'=>$user]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

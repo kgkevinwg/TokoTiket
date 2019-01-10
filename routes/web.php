@@ -25,6 +25,22 @@ Route::get('/listEvent/{id}', 'EventController@getSpesificEvent');
 
 Route::get('/ticketDetail/{id}','EventController@getTicketDetail');
 
+Route::post('/insertTiket','EventController@newTicket');
+Route::post('/newEvent','EventController@newAdminEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::post('/newUser','UserController@newUser')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::post('/newCategory','CategoryController@newCategory')->middleware(\App\Http\Middleware\CheckRole::class);;
+
+Route::get('/insertTiket','EventController@getInsertTiketPage');
+
+Route::get('/admin','EventController@getAllEventTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);
+Route::get('/adminUsers','UserController@getAllUserTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminCategories','CategoryController@getAllCategoryTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminTickets','EventController@getAllTicketTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);
+
+
+Route::get('/adminEvent','EventController@createEvent')->name('adminEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
+
+
 
 # testing purpose
 #=================
@@ -42,35 +58,6 @@ Route::get('/myCart',function(){
     return view("cart");
 });
 
-
-
-Route::get('/insertTiket',function(){
-    return view("insertTiket");
-});
-
-Route::get('/admin',function(){
-    return view("admin");
-})->name('admin');
-
-
-Route::get('/adminEvent',function(){
-    return view("adminEvent");
-})->name('adminEvent');
-
-
-Route::get('/adminCategory',function(){
-    return view("adminCategory");
-})->name('adminCategory');
-
-
-Route::get('/adminTicket',function(){
-    return view("adminTicket");
-})->name('adminTicket');
-
-
-Route::get('/adminUser',function(){
-    return view("adminUser");
-})->name('adminUser');
 
 Route::get('/auth',function(){
     return view("auth");
