@@ -26,19 +26,19 @@ Route::get('/listEvent/{id}', 'EventController@getSpesificEvent');
 Route::get('/ticketDetail/{id}','EventController@getTicketDetail');
 
 Route::post('/insertTiket','EventController@newTicket');
-Route::post('/newEvent','EventController@newAdminEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::post('/newEvent','EventController@newEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
 Route::post('/newUser','UserController@newUser')->middleware(\App\Http\Middleware\CheckRole::class);;
 Route::post('/newCategory','CategoryController@newCategory')->middleware(\App\Http\Middleware\CheckRole::class);;
 
 Route::get('/insertTiket','EventController@getInsertTiketPage');
 
 Route::get('/admin','EventController@getAllEventTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);
-Route::get('/adminUsers','UserController@getAllUserTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);;
-Route::get('/adminCategories','CategoryController@getAllCategoryTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);;
-Route::get('/adminTickets','EventController@getAllTicketTable')->name('admin')->middleware(\App\Http\Middleware\CheckRole::class);
+Route::get('/adminUsers','UserController@getAllUserTable')->name('adminUsers')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminCategories','CategoryController@getAllCategoryTable')->name('adminCategories')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminTickets','EventController@getAllTicketTable')->name('adminTickets')->middleware(\App\Http\Middleware\CheckRole::class);
 
 
-Route::get('/adminEvent','EventController@createEvent')->name('adminEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminEvents','EventController@createEvent')->name('adminEvents')->middleware(\App\Http\Middleware\CheckRole::class);;
 
 
 

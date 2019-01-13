@@ -53,7 +53,7 @@
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
-        <button  type="button" class="btn btn-primary">Logout</button>
+        <a href="{{url('/')}}"><button  type="button" class="btn btn-primary" >Logout</button></a>
     </ul>
 
 </nav>
@@ -68,17 +68,17 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminEvent')}}">
+            <a class="nav-link" href="{{route('adminEvents')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>New Event</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminUser')}}">
+            <a class="nav-link" href="{{route('adminUsers')}}">
                 <i class="fas fa-fw fa-table"></i>
                 <span>New User</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminCategory')}}">
+            <a class="nav-link" href="{{route('adminCategories')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>New Category</span></a>
         </li>
