@@ -121,8 +121,9 @@
                                         <td>{{$e['name']}}</td>
                                         <td>{{$e['description']}}</td>
                                         <td>{{$e['date']}}</td>
+                                        <td><a href="{{url('edit/e/'.$e['id'])}}"><button class="btn btn-dark">Edit</button></a></td>
 
-                                    </tr>
+                                    </tr></a>
 
                                     @endforeach
                             @endif
@@ -148,6 +149,8 @@
                                             <td>{{$u['phone']}}</td>
                                             <td>{{$u['address']}}</td>
                                             <td>{{$u['role']}}</td>
+                                            <td><a href="{{url('edit/u/'.$u['id'])}}"><button class="btn btn-dark">Edit</button></a></td>
+
                                         </tr>
                                     @endforeach
                             @endif
@@ -164,6 +167,8 @@
                                         <tr>
                                             <td>{{$c['id']}}</td>
                                             <td>{{$c['name']}}</td>
+                                            <td><a href="{{url('edit/c/'.$c['id'])}}"><button class="btn btn-dark">Edit</button></a></td>
+
                                         </tr>
                                     @endforeach
                             @endif
@@ -187,6 +192,8 @@
                                             <td>{{$t['eventId']}}</td>
                                             <td>{{$t['title']}}</td>
                                             <td>{{$t['description']}}</td>
+                                            <td><a href="{{url('edit/t/'.$t['id'])}}"><button class="btn btn-dark">Edit</button></a></td>
+
                                         </tr>
 
                                     @endforeach
@@ -202,14 +209,7 @@
         </div>
         <!-- /.container-fluid -->
 
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright © Your Website 2018</span>
-                </div>
-            </div>
-        </footer>
+
 
     </div>
     <!-- /.content-wrapper -->

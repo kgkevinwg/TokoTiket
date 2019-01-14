@@ -39,19 +39,13 @@
 
 
 
-    <!-- Navbar Search -->
+
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+
         </div>
     </form>
 
-    <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
         <a href="{{url('/')}}"><button  type="button" class="btn btn-primary" >Logout</button></a>
     </ul>
@@ -68,17 +62,17 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminEvents')}}">
+            <a class="nav-link" href="{{route('adminNewEvent')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>New Event</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminUsers')}}">
+            <a class="nav-link" href="{{route('adminNewUser')}}">
                 <i class="fas fa-fw fa-table"></i>
                 <span>New User</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('adminCategories')}}">
+            <a class="nav-link" href="{{route('adminNewCategory')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>New Category</span></a>
         </li>

@@ -69,10 +69,9 @@
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="photo">
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-9">
+                            <div class="col-lg-12">
 
-                                <input type="submit" class="btn btn-primary" value="Save Changes">
+                                <input type="submit" class="btn btn-primary" value="Save Changes" style="width: 100%;">
                             </div>
                         </div>
 

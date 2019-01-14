@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 
 Route::get('/browseEvents', 'EventController@getBrowseEvent')->name('browseEvents');
+Route::get('/myTicket', 'EventController@getMyTicket');
+Route::get('/editTicket/{id}','EventController@editMyTicket');
+Route::post('/doEditTicket/{id}','EventController@doEditMyTicket');
+Route::post('/doDeleteTicket/{id}','EventController@doDeleteMyTicket');
 Route::post('/category', 'CategoryController@store');
 
 Route::get('/listEvent/{id}', 'EventController@getSpesificEvent');
@@ -36,11 +40,19 @@ Route::get('/admin','EventController@getAllEventTable')->name('admin')->middlewa
 Route::get('/adminUsers','UserController@getAllUserTable')->name('adminUsers')->middleware(\App\Http\Middleware\CheckRole::class);;
 Route::get('/adminCategories','CategoryController@getAllCategoryTable')->name('adminCategories')->middleware(\App\Http\Middleware\CheckRole::class);;
 Route::get('/adminTickets','EventController@getAllTicketTable')->name('adminTickets')->middleware(\App\Http\Middleware\CheckRole::class);
+//Route::get('/adminEvents','EventController@createEvent')->name('adminEvents')->middleware(\App\Http\Middleware\CheckRole::class);;
 
 
-Route::get('/adminEvents','EventController@createEvent')->name('adminEvents')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminNewEvent','EventController@createEvent')->name('adminNewEvent')->middleware(\App\Http\Middleware\CheckRole::class);;
+Route::get('/adminNewUser',function(){
+    return view('adminUser');
+})->name('adminNewUser');
+Route::get('/adminNewCategory',function(){
+    return view('adminCategory');
+})->name('adminNewCategory');
+Route::get('/edit/{mode}/{id}','EventController@getEditForm');
 
-
+Route::post('/doEditDelete/{action}/{mode}/{id}','EventController@doAdminEditDelete');
 
 # testing purpose
 #=================

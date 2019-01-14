@@ -62,6 +62,11 @@
                             <a class="nav-link js-scroll-trigger" href="{{url('insertTiket')}}">Jual</a>
                         </li>
                     @endif
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="{{url('myTicket')}}">My Ticket</a>
+                        </li>
+                    @endif
 
 
                     @if(\Illuminate\Support\Facades\Auth::user()['role'] == "admin")

@@ -21,7 +21,7 @@
                 <!-- Author -->
                 <p class="lead">
                     by
-                    <a href="#">{{$user['name']}}</a>
+                    {{$user['name']}}
                 </p>
 
                 <hr>

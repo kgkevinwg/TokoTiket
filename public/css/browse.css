@@ -25,3 +25,10 @@ body {
   width: 100%;
   height: 300px;
 }
+
+.item-list
+{
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}

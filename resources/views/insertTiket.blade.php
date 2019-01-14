@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 
-    <div class="container">
+    <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="mx-auto col-sm-6">
                 <!-- form user info -->
@@ -54,7 +54,7 @@
                                 <label for="exampleFormControlFile1">Event Photo</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="ticketPhoto">
                             </div>
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit" class="btn btn-primary" style="width:100%;">
                         </form>
                     </div>
                 </div>
