@@ -17,7 +17,7 @@
                 <!-- form user info -->
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="mb-0">New Event</h4>
+                        <h4 class="mb-0">Edit Event</h4>
                     </div>
                     <div class="card-body">
                         <form class="form" role="form" autocomplete="off" method="post" action="/doEditDelete/e/e/{{$event['id']}}" enctype="multipart/form-data">
@@ -98,7 +98,7 @@
                 <!-- form user info -->
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="mb-0">New User</h4>
+                        <h4 class="mb-0">Edit User</h4>
                     </div>
                     <div class="card-body">
                         <form class="form" role="form" autocomplete="off" method="post" action="/doEditDelete/u/e/{{$user['id']}}">
@@ -163,7 +163,7 @@
                 <!-- form user info -->
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="mb-0">New Category</h4>
+                        <h4 class="mb-0">Edit Category</h4>
                     </div>
                     <div class="card-body">
                         <form class="form" role="form" autocomplete="off" action="/doEditDelete/c/e/{{$category['id']}}" method="post">

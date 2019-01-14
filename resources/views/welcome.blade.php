@@ -49,7 +49,6 @@
     </div>
 </section>
 
-<!-- Portfolio Grid -->
 <section class="bg-light" id="portfolio">
     <div class="container">
         <div class="row">
@@ -60,45 +59,45 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                    <div class="portfolio-hover">
+
+                    <div class="">
                         <div class="portfolio-hover-content">
-                            <i class="fas fa-plus fa-3x"></i>
+
                         </div>
                     </div>
 
                     <img class="home-portfolio-thumb" src="{{asset('img/events/concerts/twiceland-thumb.jpg')}}" alt="">
-                </a>
+
                 <div class="portfolio-caption">
                     <h4>Twiceland: Fantasy Park in Jakarta 2018</h4>
                     <p class="text-muted">TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                    <div class="portfolio-hover">
+
+                    <div class="">
                         <div class="portfolio-hover-content">
-                            <i class="fas fa-plus fa-3x"></i>
+
                         </div>
                     </div>
 
                     <img class="home-portfolio-thumb" src="{{asset('img/events/concerts/in_your_area-thumb.jpg')}}" alt="">
-                </a>
+
                 <div class="portfolio-caption">
                     <h4>In Your Area: Blackpink 1st Tour 2018</h4>
                     <p class="text-muted">TWICE 2nd Tour: TWICELAND Zone 2: Fantasy Park is the second solo concert tour held by TWICE. </p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                    <div class="portfolio-hover">
+
+                    <div class="">
                         <div class="portfolio-hover-content">
-                            <i class="fas fa-plus fa-3x"></i>
+
                         </div>
                     </div>
 
                     <img class="home-portfolio-thumb" src="{{asset('img/events/concerts/redmare-thumb.jpg')}}" alt="">
-                </a>
+
                 <div class="portfolio-caption">
                     <h4>Redmare: Red Velvet 2nd Tour 2018</h4>
                     <p class="text-muted">REDMARE is the second concert by Red Velvet</p>

@@ -153,7 +153,7 @@ class EventController extends Controller
         return view('adminEvent',["categories"=>$categories,'artists'=>$artists]);
     }
 
-    public function newAdminEvent(Request $request)
+    public function newEvent(Request $request)
     {
 
         $validator = Validator::make($request->all(), [
@@ -244,8 +244,12 @@ class EventController extends Controller
                     'name'=>'required',
                     'description'=>'required',
                     'date'=>'required',
+                    'photo'=>'required'
 
                 ]);
+                if($validator->fails()){
+                    return response()->json($validator->errors()->toJson(), 400);
+                }
 
                 $photo = implode('.',[
                     time(),
@@ -260,9 +264,7 @@ class EventController extends Controller
                 $newphoto->save();
 
 
-                if($validator->fails()){
-                    return response()->json($validator->errors()->toJson(), 400);
-                }
+
 
                 $photoId = DB::table('photos')->orderBy('id', 'desc')->first()->id;
 
@@ -331,6 +333,22 @@ class EventController extends Controller
             $ticket = Ticket::where('id','=',$id)->first();
             if($mode == 'e')
             {
+
+                $validator = Validator::make($request->all(), [
+                    'userId' => 'required',
+                    'ticketName' => 'required',
+                    'ticketDescription' =>'required',
+                    'eventId'=>'required',
+                    'photo'=>'required',
+
+                ]);
+
+                if($validator->fails()){
+                    return response()->json($validator->errors()->toJson(), 400);
+                }
+
+
+
                 $photo = implode('.',[
                     time(),
                     $request->photo->getClientOriginalExtension()
@@ -395,6 +413,16 @@ class EventController extends Controller
     {
         $ticket = Ticket::where('id','=',$id)->first();
 
+        $validator = Validator::make($request->all(), [
+            'ticketName' => 'required',
+            'ticketDescription' => 'required',
+            'ticketDescription' =>'required',
+
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
         $photo = implode('.',[
             time(),
             $request->photo->getClientOriginalExtension()
